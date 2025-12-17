@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/dashbord_color.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/constants/dashbord_color.dart';
 
 class TopTabBar extends StatelessWidget {
   const TopTabBar({super.key});
@@ -7,11 +9,10 @@ class TopTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      height: 38.h,
       decoration: BoxDecoration(
         color: kInactiveTabBackground,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), topRight: Radius.circular(10.r)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -31,7 +32,7 @@ class TopTabBar extends StatelessWidget {
         decoration: isActive
             ? BoxDecoration(
           color: kPrimaryBlue, // Active tab color
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(10.r), topRight: Radius.circular(10.r)),
           boxShadow: [
             BoxShadow(
               color: kPrimaryBlue.withOpacity(0.3),
@@ -41,12 +42,15 @@ class TopTabBar extends StatelessWidget {
             ),
           ],
         )
-            : null,
+            : BoxDecoration(
+          color: Colors.white,),
         child: Text(
           title,
           style: TextStyle(
             color: isActive ? Colors.white : kInactiveGrey,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w700,
+            fontSize: 14.sp,
+            height: 1.0.h,
           ),
         ),
       ),

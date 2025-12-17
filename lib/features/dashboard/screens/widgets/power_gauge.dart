@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/constants/dashbord_color.dart';
+import '../../../../core/constants/dashbord_color.dart';
+
 
 class PowerGauge extends StatelessWidget {
   const PowerGauge({super.key});
@@ -11,31 +13,35 @@ class PowerGauge extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         SizedBox(
-          width: 150,
-          height: 150,
+          width: 130,
+          height: 130,
           child: CircularProgressIndicator(
-            value: 0.8, // Static 80% filled
+            value: 1.0, // Static 80% filled
             strokeWidth: 20,
             backgroundColor: kPrimaryBlue.withOpacity(0.2),
-            valueColor: AlwaysStoppedAnimation<Color>(kPrimaryBlue),
+            valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF398FC9)),
           ),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Text(
               'Total Power',
               style: TextStyle(
-                fontSize: 14,
-                color: Colors.black54,
+                fontSize: 12.sp,
+                color: Color(0xFF04063E),
+                fontWeight: FontWeight.w400,
+                height: 1.0.h
               ),
             ),
+            SizedBox(height: 4.h),
             Text(
               '5.53 kw',
               style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF04063E),
+                height: 1.0.h
               ),
             ),
           ],

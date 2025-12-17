@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/dashbord_color.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/constants/dashbord_color.dart';
+import '../../../../core/routes/app_routes.dart';
 
 class GridActionButton extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String icon;
 
   const GridActionButton({
     super.key,
@@ -15,10 +18,11 @@ class GridActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // GridView's childAspectRatio handles the 148x42 ratio
-      height: 42,
+      height: 42.h,
       decoration: BoxDecoration(
         color: kGridButtonBackground, // #FFFFFF
-        borderRadius: BorderRadius.circular(8.0), // 8px border radius
+        borderRadius: BorderRadius.circular(8.0.r), // 8px border radius
+        border: Border.all(color: Color(0xFFB6B8D0), width: 1),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
@@ -30,22 +34,23 @@ class GridActionButton extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          // Handle button tap
+          Navigator.pushNamed(context, AppRoutes.gridDetails);
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: EdgeInsets.symmetric(horizontal: 8.0.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(icon, color: kPrimaryBlue, size: 28),
-              const SizedBox(width: 8),
+              Image.asset(icon, width: 24.w, height: 24.h),
+              SizedBox(width: 8.w),
               Expanded(
                 child: Text(
                   title,
-                  style: const TextStyle(
-                    fontSize: 14,
+                  style: TextStyle(
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
-                    color: Colors.black87,
+                    color: Color(0xFF646984),
+                    height: 1.0.h
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),

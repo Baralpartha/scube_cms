@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField extends StatefulWidget {
   final String hint;
@@ -29,12 +30,19 @@ class _CustomTextFieldState extends State<CustomTextField> {
       obscureText: _obscureText,
       decoration: InputDecoration(
         hintText: widget.hint,
+        hintStyle: TextStyle(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+          color: Color(0xFF5E5E5E),
+          height: 1.0.h,
+        ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Color(0xFFB9C6D6)),
+          borderRadius: BorderRadius.circular(10.r),
         ),
         filled: true,
         fillColor: const Color(0xFFF5F5F5),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        contentPadding: EdgeInsets.only(left: 12.w, top: 20.h, bottom: 19.h),
         suffixIcon: widget.isPassword
             ? IconButton(
           icon: Icon(
