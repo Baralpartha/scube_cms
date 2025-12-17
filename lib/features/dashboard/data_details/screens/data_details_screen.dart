@@ -46,7 +46,6 @@ class _DataDetailsScreenState extends State<DataDetailsScreen> {
                       SizedBox(height: 30.h),
                       const DateFilter(),
                       SizedBox(height: 15.h),
-                      // এখানে ২টা বক্স কল করা হয়েছে
                       const EnergyDetailBox(title: "Energy Chart", mainValue: "20.05 kw"),
                       SizedBox(height: 15.h),
 
@@ -103,7 +102,6 @@ class _DataDetailsScreenState extends State<DataDetailsScreen> {
               IconButton(
                 icon: Icon(Icons.notifications_none, color: kInactiveGrey, size: 24.sp),
                 onPressed: () {
-                  // Handle notification button press
                 },
               ),
               Positioned(

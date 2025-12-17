@@ -65,7 +65,6 @@ class GridDetailsScreen extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.notifications_none, color: kInactiveGrey, size: 24.sp),
                 onPressed: () {
-                  // Handle notification button press
                 },
               ),
               Positioned(

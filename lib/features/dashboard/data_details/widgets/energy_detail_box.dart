@@ -29,7 +29,7 @@ class EnergyDetailBox extends StatelessWidget {
                       color: const Color(0xFF4A4E69)
                   )
               ),
-              // এখানে কালার পরিবর্তন করা হয়েছে (#04063E)
+
               Text(
                   mainValue,
                   style: TextStyle(

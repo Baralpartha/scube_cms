@@ -46,7 +46,6 @@ class DashboardScreen extends StatelessWidget {
                         thickness: 2,
                       ),
                     ),
-                    // Data View Cards (Imported Widgets)
                     Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(bottom: 12.0.sp, left: 12.0.sp, right: 12.0.sp),
@@ -57,7 +56,6 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20.h),
-              // Bottom Grid Buttons (Imported Widget)
               _buildBottomGridButtons(),
               SizedBox(height: 12.h), // Extra space at the bottom
             ],
@@ -123,7 +121,6 @@ class DashboardScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20),
       child: Column(
         children: [
-          // Tab Bar (Imported Widget)
           const TopTabBar(),
           const Divider(height: 1, thickness: 1, color: Color(0xFFE0E0E0)),
           SizedBox(height: 12.h),
@@ -152,7 +149,6 @@ class DashboardScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 14.h),
-          // Total Power Gauge (Imported Widget)
           const PowerGauge(),
         ],
       ),
