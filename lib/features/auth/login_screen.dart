@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 336.h, // স্থির উচ্চতা
+              height: 336.h,
               width: double.infinity,
               color: AppColors.primaryBlue,
               child: Column(
@@ -119,10 +119,11 @@ class LoginScreen extends StatelessWidget {
                       PrimaryButton(
                         title: 'Login',
                         onTap: () {
-                          designSizeNotifier.value = const Size(360, 836);
-                          Navigator.pushNamed(context, AppRoutes.dashboard);
+                          designSizeNotifier.value = const Size(360, 944);
+                          Navigator.pushNamed(context, AppRoutes.pageone);
                         },
                       ),
+
 
                       SizedBox(height: 8.h),
                       Center(

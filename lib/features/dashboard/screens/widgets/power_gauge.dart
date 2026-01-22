@@ -16,7 +16,7 @@ class PowerGauge extends StatelessWidget {
           width: 130,
           height: 130,
           child: CircularProgressIndicator(
-            value: 1.0, // Static 80% filled
+            value: 1.2, // Static 80% filled
             strokeWidth: 20,
             backgroundColor: kPrimaryBlue.withOpacity(0.2),
             valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF398FC9)),

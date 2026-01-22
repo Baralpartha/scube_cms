@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/constants/dashbord_color.dart';
-import '../../data_details/screens/data_details_screen.dart';
 
 class DataViewCard extends StatelessWidget {
   final String title;
@@ -36,14 +35,6 @@ class DataViewCard extends StatelessWidget {
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(4.r),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const DataDetailsScreen(),
-              ),
-            );
-          },
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Row(

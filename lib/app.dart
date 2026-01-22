@@ -8,7 +8,6 @@ ValueNotifier(const Size(360, 800));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<Size>(
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
                 primaryColor: AppColors.primaryBlue,
                 scaffoldBackgroundColor: Colors.white,
               ),
-              initialRoute: AppRoutes.login,
+              initialRoute: AppRoutes.splash,
               routes: AppRoutes.routes,
             );
           },

@@ -8,47 +8,80 @@ import 'package:scube_cms/features/dashboard/screens/widgets/top_tab_bar.dart';
 
 import '../../../app.dart';
 import '../../../core/constants/dashbord_color.dart';
+import '../../pageone/presentation/pages/page_one_screen.dart';
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+class PageTwoScreen extends StatelessWidget {
+  const PageTwoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFD9E4F1),
+      backgroundColor: const Color(0xFFD9E4F1),
       appBar: _buildAppBar(context),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 12.0.h),
+          padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 12.0.h),
           child: Column(
             children: [
-              // Top Section: Tabs, Electricity, Power Gauge
+              GestureDetector(
+                onTap: () {
+                  designSizeNotifier.value = const Size(360, 944);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const PageOneScreen()));
+                },
+                child: Container(
+                  width: 336.w,
+                  height: 32.h,
+                  margin: EdgeInsets.only(bottom: 12.h),
+                  decoration: BoxDecoration(
+                    color:  const Color(0xAA00C0E8),
+                    borderRadius: BorderRadius.circular(4.r),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '1st Page Navigate',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.white,
+                        size: 12.sp,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
               Container(
                 height: 537.h,
                 width: 312.w,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(color: Color(0xFFB6B8D0)),
+                  border: Border.all(color: const Color(0xFFB6B8D0)),
                 ),
                 child: Column(
                   children: [
                     _buildTopSection(),
-                    // Main Content Below Power Gauge
                     SizedBox(height: 7.h),
-                    // Source/Load Switch (Imported Widget)
                     const SourceLoadSwitch(),
-                    //SizedBox(height: 4.h),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.0.w),
-                      child: Divider(
+                      child: const Divider(
                         color: Color(0xFFA5A7B9),
                         thickness: 2,
                       ),
                     ),
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsets.only(bottom: 12.0.sp, left: 12.0.sp, right: 12.0.sp),
+                        padding: EdgeInsets.only(
+                            bottom: 12.0.sp, left: 12.0.sp, right: 12.0.sp),
                         child: _buildDataViewCards(),
                       ),
                     ),
@@ -57,14 +90,13 @@ class DashboardScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.h),
               _buildBottomGridButtons(),
-              SizedBox(height: 12.h), // Extra space at the bottom
+              SizedBox(height: 12.h),
             ],
           ),
         ),
       ),
     );
   }
-
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
@@ -82,8 +114,9 @@ class DashboardScreen extends StatelessWidget {
         ),
       ),
       title: Text(
-        'SCM',
-        style: TextStyle(color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.w500),
+        '2nd Page',
+        style: TextStyle(
+            color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.w500),
       ),
       actions: [
         Padding(
@@ -91,10 +124,9 @@ class DashboardScreen extends StatelessWidget {
           child: Stack(
             children: [
               IconButton(
-                icon: Icon(Icons.notifications_none, color: kInactiveGrey, size: 24.sp),
-                onPressed: () {
-                  // Handle notification button press
-                },
+                icon: Icon(Icons.notifications_none,
+                    color: kInactiveGrey, size: 24.sp),
+                onPressed: () {},
               ),
               Positioned(
                 right: 12.w,
@@ -115,7 +147,6 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-
   Widget _buildTopSection() {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
@@ -124,7 +155,6 @@ class DashboardScreen extends StatelessWidget {
           const TopTabBar(),
           const Divider(height: 1, thickness: 1, color: Color(0xFFE0E0E0)),
           SizedBox(height: 12.h),
-          // Electricity Title
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
             child: Align(
@@ -135,7 +165,7 @@ class DashboardScreen extends StatelessWidget {
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   height: 1.0.h,
-                  color: Color(0xFF979797),
+                  color: const Color(0xFF979797),
                 ),
               ),
             ),
@@ -143,7 +173,7 @@ class DashboardScreen extends StatelessWidget {
           SizedBox(height: 2.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0.w),
-            child: Divider(
+            child: const Divider(
               color: Color(0xFF979797),
               thickness: 1,
             ),
@@ -155,10 +185,8 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-
   Widget _buildDataViewCards() {
     return ListView(
-
       padding: EdgeInsets.zero,
       children: [
         DataViewCard(
@@ -167,7 +195,7 @@ class DashboardScreen extends StatelessWidget {
           data2: '58805.63',
           icon: "assets/images/solar-cell_5575136 1.png",
           color: Colors.blue,
-          color2: Color(0xFF78C6FF),
+          color2: const Color(0xFF78C6FF),
           isActive: true,
         ),
         SizedBox(height: 4.h),
@@ -177,7 +205,7 @@ class DashboardScreen extends StatelessWidget {
           data2: '58805.63',
           icon: "assets/images/Asset 2@4x-8 3.png",
           color: Colors.deepOrange,
-          color2: Color(0xFFFB902E),
+          color2: const Color(0xFFFB902E),
           isActive: true,
         ),
         SizedBox(height: 4.h),
@@ -187,7 +215,7 @@ class DashboardScreen extends StatelessWidget {
           data2: '58805.63',
           icon: "assets/images/power_15679163 1.png",
           color: Colors.red,
-          color2: Color(0xFF78C6FF),
+          color2: const Color(0xFF78C6FF),
           isActive: false,
         ),
         SizedBox(height: 4.h),
@@ -197,13 +225,12 @@ class DashboardScreen extends StatelessWidget {
           data2: '65000.00',
           icon: "assets/images/solar-cell_5575136 1.png",
           color: Colors.green,
-          color2: Color(0xFF78C6FF),
+          color2: const Color(0xFF78C6FF),
           isActive: true,
         ),
       ],
     );
   }
-
 
   Widget _buildBottomGridButtons() {
     final List<Map<String, dynamic>> buttons = [
@@ -227,7 +254,8 @@ class DashboardScreen extends StatelessWidget {
       itemCount: buttons.length,
       itemBuilder: (context, index) {
         final item = buttons[index];
-        return GridActionButton(title: item['title'] as String, icon: item['icon']);
+        return GridActionButton(
+            title: item['title'] as String, icon: item['icon']);
       },
     );
   }
